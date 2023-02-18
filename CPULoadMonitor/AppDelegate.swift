@@ -22,7 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         super.awakeFromNib()
         
         statusItem = NSStatusBar.system.statusItem(withLength: 32)
-        let statusView = StatusView(frame: NSRect(x: 0, y: 6, width: 32, height: 12))
+        let statusView = StatusView(frame: NSRect(
+            x: 0, y: (NSStatusBar.system.thickness - 16.0) / 2.0,
+            width: 32, height: 16))
         statusView.wantsLayer = true
         statusItem?.button?.addSubview(statusView)
         self.statusView = statusView
@@ -58,7 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func overalCPULoad() {
         let usage = CPU.systemUsage()        
-        statusView?.value = CGFloat((usage.user + usage.system) / 200.0)
+        statusView?.value = CGFloat((usage.user + usage.system) / 100.0)
         statusView?.needsDisplay = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.overalCPULoad()

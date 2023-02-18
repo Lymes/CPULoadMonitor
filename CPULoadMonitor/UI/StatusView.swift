@@ -25,5 +25,11 @@ final class StatusView: NSView {
         let borderPath = NSBezierPath(roundedRect: bounds, xRadius: 4.0, yRadius: 4.0)
         borderPath.lineWidth = 1.0
         borderPath.stroke()
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let attrs = [NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 10)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        let string = "\(Int(value * 100))%"
+        string.draw(with: bounds.insetBy(dx: 2.0, dy: 2.0), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
     }
 }
