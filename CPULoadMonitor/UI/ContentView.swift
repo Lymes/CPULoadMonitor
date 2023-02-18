@@ -13,24 +13,28 @@ struct ContentView: View {
     private var viewModel = ContentViewModel()
     
     let columns = [
-        GridItem(.adaptive(minimum: 80))
+        GridItem(.adaptive(minimum: 70))
     ]
     
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(viewModel.cpuInfo, id: \.self) { item in
-                Gauge(value: item.user + item.system, in: 0...100) {
-                } currentValueLabel: {
-                    Text("\(Int(item.user))")
-                        .foregroundColor(.white.opacity(0.8))
+        VStack {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(viewModel.cpuInfo, id: \.self) { item in
+                    Gauge(value: item.user + item.system, in: 0...200) {
+                    } currentValueLabel: {
+                        Text("\(Int(item.user))")
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                    .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
+                    .gaugeStyle(.accessoryCircularCapacity)
                 }
-                .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
-                .gaugeStyle(.accessoryCircularCapacity)
+            }
+            .shadow(color: .black, radius: 5.0, x: 0.0, y: 0.0)
+            .onAppear {
+                viewModel.loadData()
             }
         }
-        .onAppear {
-            viewModel.loadData()
-        }
+        .padding()
         Spacer()
     }
 }
