@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let menu = menu {
             statusItem?.menu = menu
         }
-        
+        window?.setFrame(.zero, display: false)
         window?.backgroundColor = .clear
         window?.level = NSWindow.Level(-100)
         window?.windowController?.shouldCascadeWindows = false
@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
               let frame = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSValue.self, from: data) else {
             return
         }
-        window?.setFrame(frame.rectValue, display: false)
+        window?.animator().setFrame(frame.rectValue, display: true)
         overalCPULoad()
     }
     
