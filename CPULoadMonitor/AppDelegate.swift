@@ -12,8 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow?
     @IBOutlet weak var menu: NSMenu?
-    @IBOutlet weak var firstMenuItem: NSMenuItem?
-    
+
     private let windowKey = "CPUWindow"
     private var statusItem: NSStatusItem?
     private var statusView: StatusView?

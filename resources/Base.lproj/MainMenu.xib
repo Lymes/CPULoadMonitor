@@ -14,7 +14,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CPULoadMonitor" customModuleProvider="target">
             <connections>
-                <outlet property="firstMenuItem" destination="5kV-Vb-QxS" id="2K7-5I-7SK"/>
                 <outlet property="menu" destination="uQy-DD-JDr" id="QvP-aX-Qnd"/>
                 <outlet property="window" destination="gAV-sI-OWo" id="IYd-nO-XH1"/>
             </connections>
