@@ -29,7 +29,7 @@ struct ContentView: View {
                     .gaugeStyle(.accessoryCircularCapacity)
                 }
             }
-            .shadow(color: .black, radius: 5.0, x: 0.0, y: 0.0)
+            .shadow(color: .black.opacity(0.6), radius: 2.0, x: 0.0, y: 0.0)
             .onAppear {
                 viewModel.loadData()
             }
