@@ -5,9 +5,9 @@
 	<key>BuildEnvironment</key>
 	<dict>
 		<key>BuildDate</key>
-		<string>230224</string>
+		<string>230226</string>
 		<key>BuildNumber</key>
-		<integer>10</integer>
+		<integer>9</integer>
 	</dict>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>

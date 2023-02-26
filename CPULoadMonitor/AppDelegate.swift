@@ -34,6 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window?.setFrame(.zero, display: false)
         window?.backgroundColor = .clear
         window?.level = NSWindow.Level(-100)
+        window?.isMovableByWindowBackground = true
         window?.windowController?.shouldCascadeWindows = false
     }
     

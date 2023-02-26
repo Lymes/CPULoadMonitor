@@ -20,7 +20,7 @@ struct ContentView: View {
         VStack {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.cpuInfo, id: \.self) { item in
-                    Gauge(value: item.user + item.system, in: 0...200) {
+                    Gauge(value: item.user + item.system, in: 0...100) {
                     } currentValueLabel: {
                         Text("\(Int(item.user))")
                             .foregroundColor(.white.opacity(0.8))
